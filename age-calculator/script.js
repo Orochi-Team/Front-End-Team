@@ -6,13 +6,13 @@ function calcularIdade(dataNascimento) {
   var meses = hoje.getMonth() - nascimento.getMonth();
   var dias = hoje.getDate() - nascimento.getDate();
 
-  // Verifica se o aniversário já ocorreu neste ano ou se ainda vai ocorrer
+  // Verifica se o aniversário já ocorreu neste ano ou se ainda vai ocorrer.
   if (meses < 0 || (meses === 0 && dias < 0)) {
     anos--;
     meses += 12;
   }
 
-  // Verifica se o dia do mês de nascimento é maior que o dia atual
+  // Verifica se o dia do mês de nascimento é maior que o dia atual.
   if (dias < 0) {
     var ultimoDiaMesAnterior = new Date(
       hoje.getFullYear(),
@@ -28,12 +28,12 @@ function calcularIdade(dataNascimento) {
 
 function verificar() {
   var nascimento = {
-    // Pega os valores dos inputs e converte-os em número
+    // Pega os valores dos inputs e converte-os em número.
     ano: Number(document.getElementById("year").value),
     mes: Number(document.getElementById("month").value),
     dia: Number(document.getElementById("day").value),
   };
-  // Pega os elementos onde vai a resposta para o usuário
+  // Pega os elementos onde vai a resposta para o usuário.
   let day = document.getElementById("result-day");
   let month = document.getElementById("result-month");
   let year = document.getElementById("result-year");
@@ -49,11 +49,11 @@ function verificar() {
   erroTitleMonth = document.getElementById("title-month");
   erroTitleYear = document.getElementById("title-year");
 
-  // Pega o ano Atual para efetuar as verificações, através do objeto date
+  // Pega o ano Atual para efetuar as verificações, através do objeto date.
   let data = new Date();
   let anoAtual = data.getFullYear();
 
-  //Verificação se tudo está correto para prosseguimento
+  //Verificação se tudo está correto para prosseguimento.
   if (
     nascimento.ano <= anoAtual &&
     nascimento.mes >= 1 &&
@@ -61,11 +61,8 @@ function verificar() {
     nascimento.dia >= 1 &&
     nascimento.dia <= 31
   ) {
-    // Cálculo da data usando a função calcularIdade
-    let dataNascimento = `${nascimento.ano}-${nascimento.mes - 1}-${
-      nascimento.dia
-    }`;
-
+    // Cálculo da data usando a função calcularIdade.
+    let dataNascimento = `${nascimento.ano}-${nascimento.mes}-${nascimento.dia}`;
     let idade = calcularIdade(dataNascimento);
 
     // Escrevendo a resposta no HTML
@@ -73,7 +70,7 @@ function verificar() {
     month.innerHTML = `${idade.meses}`;
     day.innerHTML = `${idade.dias}`;
 
-    // Limpar mensagens de erro e classes de estilo inválido
+    // Limpar mensagens de erro e classes de estilo inválido.
     errorDay.textContent = "";
     errorMonth.textContent = "";
     errorYear.textContent = "";
@@ -84,7 +81,7 @@ function verificar() {
     erroTitleMonth.style = "color: grey;";
     erroTitleYear.style = "color: grey;";
 
-    //Informa que há um valor inválido
+    //Informa que há um valor inválido.
   } else {
     if (nascimento.dia < 1 || nascimento.dia > 31) {
       errorDay.textContent = "Must be a valid day";
