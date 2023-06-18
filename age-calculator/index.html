@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    <title>Age Calculator</title>
+
+</head>
+<body>
+    <main>
+        <div id="card">
+            <div class="data">
+                <div class="stdata">
+                    <p id="title-day">Day</p>
+                    <input type="number" placeholder="DD" class="date" id="day" min="1" max="31">
+                    <!--faz a mensagem de erro nos ID:Error-->
+                    <p class="invalid" id="error-day"></p>
+                </div>
+                <div class="stdata">
+                    <p id="title-month">Month</p>
+                    <input type="number" placeholder="MM" class="date" id="month" min="1" max="12">
+                    <!--faz a mensagem de erro nos ID:Error-->
+                    <p class="invalid" id="error-month"></p>
+                </div>
+                <div class="stdata">
+                    <p id="title-year">Year</p>
+                    <input type="number" placeholder="YYYY" class="date" id="year">
+                    <!--faz a mensagem de erro nos ID:Error-->
+                    <p class="invalid" id="error-year"></p>
+                </div>
+            
+            </div>
+            <div class="arrow">
+                <hr>
+                <spam class="color" id="btn-submmit"><img src="assets/images/icon-arrow.svg" alt="" onclick="verificar()"></spam>
+            </div>
+            <div class="result">
+                <span><span class="num-result" id="result-year">--</span>Years</span>
+                
+                <span><span class="num-result" id="result-month">--</span>Months</span>
+
+                <span><span class="num-result" id="result-day">--</span>Days</span>
+
+            </div>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

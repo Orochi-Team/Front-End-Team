@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family:'HankenGrotesk' ;
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+:root{
+    --font01:'HankenGrotesk';
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: var(--font01);
+}
+
+article{
+    display: flex;
+    box-shadow: 0px 0px 30px rgba(103, 103, 211, 0.575);
+    border-radius: 20px;
+    max-width: 720px;
+}
+
+.left-card{
+    background-color: rgb(65, 65, 172);
+    border-radius: 20px ;
+    padding: 20px;
+    color: azure;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+h1{
+    font-size: 20px;
+
+}
+
+.circle{
+    background-color: blue;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px;
+    width: 180px;
+    background-image: linear-gradient(to bottom, rgb(2, 2, 143),rgb(75, 75, 189));
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.144);
+}
+
+.num{
+    font-size: 10vh;
+    color:aliceblue;
+    font-weight: bold;   
+}
+
+.right-card{
+    padding: 15px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    
+}
+
+.min-cards{
+    padding: 15px 0px 15px 10px;
+    
+}
+
+.red{
+    background-color: rgba(245, 132, 132, 0.295);
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-radius: 10px;
+    color: orangered;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+}
+
+.yellow{
+    background-color:rgba(245, 243, 132, 0.295);
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-radius: 10px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    color: rgb(156, 156, 6);
+}
+
+.green{
+    background-color: rgba(129, 245, 129, 0.295);
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-radius: 10px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    color: green;
+}
+
+.blue{
+    background-color: rgba(0, 0, 255, 0.295);
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: blue;
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+   
+.nu{
+    color: rgba(12, 12, 54, 0.562);
+    font-weight: bold;
+}
+
+spam{
+    color: rgb(12, 12, 54);
+}
+
+.btn{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(12, 12, 54);
+    color: azure;
+    font-weight: bold;
+    letter-spacing:1.5px;
+}
+
+
+
+
+
+
+
