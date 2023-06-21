@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interative Card</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <main>
+        <section class="left-card">
+            <div class="bg-front"> 
+                <div class="card-logo"><img src="images/card-logo.svg" alt="">
+                </div>
+                <!-- o id "num-card" recebe o id "card-number"-->
+                    <input type="text" maxlength="19"  placeholder="0000 0000 0000 0000" class="num-cart" id="num-card">
+
+                    <div class="bottom-info">
+                        <input type="text" placeholder="Titular Do Cartao" class="titular" id="card-titular">
+                        <!-- esse id "card-titular" recebe o id "titular" -->
+                        
+                    <input type="text"  placeholder="00/00" class="validade" id="exp-date">
+                    <!-- o id "exp-date" recebe as datas do id "expiration-month" e do "expiration year" -->
+                </div>
+                    
+            </div>
+
+            <div class="bg-back">
+                <input type="text" maxlength="5" placeholder="000" class="num-cvv" id="cvc-number">
+                <!-- o id "cvc-number" recebe o id "cvc" -->
+            </div>
+        </section>
+
+        <section class="right-card">
+            <div class="text-field">
+                
+                <label for="titular">Titular do Cartão</label>
+                <input type="text" placeholder="Titular do Cartao" id="titular">
+                <!-- o id "titular" envia pro id "card-titular" -->
+
+                <label for="card-number">Numero do Cartao</label>
+                <input type="text" placeholder="0000 0000 0000 0000" id="card-number" > 
+                <!-- ess id "card-number" envia o número pro id "num-card" -->
+
+                <label for="expiration-input" class="expiration-label">Exp. Card</label>
+                <div class="expiration-container">
+                  <input type="text" class="expiration-input" id="expiration-month" maxlength="2" placeholder="MM">
+                    <!-- esses dois id "expiration month/year" enviam pro id "exp-date" -->
+                  <input type="text" class="expiration-input" id="expiration-year" maxlength="2" placeholder="YY" >
+
+                  <input type="text" class="cvc-input" id="cvc" maxlength="3" placeholder="CVC">
+                  <!-- o id "cvc" envia pro id "cvc-number" -->
+                </div>
+
+                <div class="complet">
+                    <img class="comp-img" src="images/icon-complete.svg" alt="">
+                    <h3>Thank You!</h3>
+                    <p>We've added your card details</p>
+                    <button>continue</button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
