@@ -162,7 +162,7 @@ label{
     letter-spacing: 1px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    /* display: none; */
+     /* display: none; */
 }
 
 #card-number{
@@ -173,7 +173,7 @@ label{
     margin-bottom: 15px;
     width: 90%;
 
-    /* display: none; */
+     /* display: none; */
 }
 
 .expiration-container {
@@ -181,7 +181,7 @@ label{
     gap: 15px;
     width: 95.5%;
 
-    /* display: none; */
+     /* display: none; */
   }
 
   .expiration-input {
