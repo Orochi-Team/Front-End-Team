@@ -59,7 +59,7 @@ main{
     outline: none;
 }
 
-.num-cart::placeholder{
+.num-cart{
     color: rgba(255, 255, 255, 0.856);
 }
 
@@ -82,7 +82,7 @@ main{
     outline: none;
 }
 
-.titular::placeholder{
+.titular{
     color: rgba(255, 255, 255, 0.705);
 }
 
@@ -93,7 +93,7 @@ main{
     outline: none;
 }
 
-.validade::placeholder{
+.validade{
     color: rgba(255, 255, 255, 0.705);
     font-weight: 700;
     letter-spacing: 1px;
@@ -127,7 +127,7 @@ main{
     font-weight: 700;
 }
 
-.num-cvv::placeholder{
+.num-cvv{
     color: rgba(255, 255, 255, 0.856);
 }
 
@@ -137,7 +137,7 @@ main{
 
 .text-field{
     max-width: 68%;
-    padding-left: 15%;    
+    padding-left: 15%; 
 }
 
 
@@ -147,7 +147,6 @@ main{
     border-radius: 8px;
     border-color: rgba(211, 211, 211, 0.63);
     border-width: 0.5px;
-    margin-bottom: 15px;
     width: 90%;
     
 
@@ -170,7 +169,6 @@ label{
     border-radius: 8px;
     border-color: rgba(211, 211, 211, 0.63);
     border-width: 0.5px;
-    margin-bottom: 15px;
     width: 90%;
 
      /* display: none; */
@@ -178,21 +176,21 @@ label{
 
 .expiration-container {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     width: 95.5%;
 
      /* display: none; */
   }
 
   .expiration-input {
-    width: 40%;
+    width: 60%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
   .cvc-input {
-    width: 40%;
+    width: 90%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -251,4 +249,12 @@ label{
   button:hover{
     background-color: rgb(109, 45, 168);
     transform: scale(1.1);
+  }
+
+  .error{
+    margin-bottom: 15px;
+  }
+
+  .p-error{
+    width: 100%;
   }

@@ -14,19 +14,19 @@
             <div class="data">
                 <div class="stdata">
                     <p id="title-day">Day</p>
-                    <input type="number" placeholder="DD" class="date" id="day" min="1" max="31">
+                    <input type="number" placeholder="DD" class="date" id="day" min="1" max="31" maxlength="2" oninput="limitarCaracteres(), validarNumeros(this)">
                     <!--faz a mensagem de erro nos ID:Error-->
                     <p class="invalid" id="error-day"></p>
                 </div>
                 <div class="stdata">
                     <p id="title-month">Month</p>
-                    <input type="number" placeholder="MM" class="date" id="month" min="1" max="12">
+                    <input type="number" placeholder="MM" class="date" id="month" min="1" max="12" maxlength="2" oninput="limitarCaracteres(), validarNumeros(this)">
                     <!--faz a mensagem de erro nos ID:Error-->
                     <p class="invalid" id="error-month"></p>
                 </div>
                 <div class="stdata">
                     <p id="title-year">Year</p>
-                    <input type="number" placeholder="YYYY" class="date" id="year">
+                    <input type="number" placeholder="YYYY" class="date" id="year" maxlength="4" oninput="limitarCaracteres(), validarNumeros(this)">
                     <!--faz a mensagem de erro nos ID:Error-->
                     <p class="invalid" id="error-year"></p>
                 </div>

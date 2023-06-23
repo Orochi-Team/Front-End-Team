@@ -16,20 +16,24 @@
                 <div class="card-logo"><img src="images/card-logo.svg" alt="">
                 </div>
                 <!-- o id "num-card" recebe o id "card-number"-->
-                    <input type="text" maxlength="19"  placeholder="0000 0000 0000 0000" class="num-cart" id="num-card">
+                    <span class="num-cart" id="num-card">0000 0000 0000 0000</span>
+                    <!--<input type="text" maxlength="19"  placeholder="" class="num-cart" id="num-card">-->
 
                     <div class="bottom-info">
-                        <input type="text" placeholder="Titular Do Cartao" class="titular" id="card-titular">
+                        <span class="titular" id="card-titular">JANE APPLESEED</span>
+                        <!--<input type="text" placeholder="Titular Do Cartao" class="titular" id="card-titular">-->
                         <!-- esse id "card-titular" recebe o id "titular" -->
                         
-                    <input type="text"  placeholder="00/00" class="validade" id="exp-date">
+                    <span class="validade" id="exp-date">00/00</span>     
+                    <!--<input type="text"  placeholder="00/00" class="validade" id="exp-date"> -->
                     <!-- o id "exp-date" recebe as datas do id "expiration-month" e do "expiration year" -->
                 </div>
                     
             </div>
 
             <div class="bg-back">
-                <input type="text" maxlength="5" placeholder="000" class="num-cvv" id="cvc-number">
+                <span class="num-cvv" id="cvc-number">000</span>
+                <!--<input type="text" maxlength="5" placeholder="000" class="num-cvv" id="cvc-number"> -->
                 <!-- o id "cvc-number" recebe o id "cvc" -->
             </div>
         </section>
@@ -37,35 +41,47 @@
         <section class="right-card">
             <div class="text-field">
                 
-                <label for="titular">Titular do Cartão</label>
-                <input type="text" placeholder="Titular do Cartao" id="titular">
+                <label for="titular">CardHolder Name</label>
+                <input type="text" placeholder="e.g. Jane Appleseed" id="titular" oninput="validarEntrada()">
+                <p class="error" id="error-titular"></p>
                 <!-- o id "titular" envia pro id "card-titular" -->
 
-                <label for="card-number">Numero do Cartao</label>
-                <input type="text" placeholder="0000 0000 0000 0000" id="card-number" > 
+                <label for="card-number">Card Number</label>
+                <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="card-number" oninput="formatarEntrada()">
+                <p class="error" id="error-cNumber"></p> 
                 <!-- ess id "card-number" envia o número pro id "num-card" -->
 
-                <label for="expiration-input" class="expiration-label">Exp. Card</label>
+                <label for="expiration-input" class="expiration-label">Exp. Card (MM/YY/CVC)</label>
                 <div class="expiration-container">
-                  <input type="text" class="expiration-input" id="expiration-month" maxlength="2" placeholder="MM">
-                    <!-- esses dois id "expiration month/year" enviam pro id "exp-date" -->
-                  <input type="text" class="expiration-input" id="expiration-year" maxlength="2" placeholder="YY" >
+                    <div class="p-error">
+                        <input type="number" class="expiration-input" id="expiration-month" maxlength="2" placeholder="MM" oninput="limitarCaracteres(), validarNumeros(this)">
+                        <p class="error" id="error-month"></p>
+                    </div>
 
-                  <input type="text" class="cvc-input" id="cvc" maxlength="3" placeholder="CVC">
-                  <!-- o id "cvc" envia pro id "cvc-number" -->
+                    <div class="p-error">
+                        <input type="number" class="expiration-input" id="expiration-year" maxlength="2" placeholder="YY" oninput="limitarCaracteres(), validarNumeros(this)">
+                        <p class="error" id="error-year"></p>
+                    </div> 
+                    <!-- esses dois id "expiration month/year" enviam pro id "exp-date" -->
+                    <div class="p-error">
+                        <input type="number" class="cvc-input" id="cvc" maxlength="3" placeholder="e.g. 123" oninput="limitarCaracteres(), validarNumeros(this)">
+                        <p class="error" id="error-cvc"></p>
+                        <!-- o id "cvc" envia pro id "cvc-number" -->
+                    </div>
+
                 </div>
-                
                 <div class="complet">
                     <img class="comp-img" src="images/icon-complete.svg" alt="">
                     <h3>Thank You!</h3>
                     <p>We've added your card details</p>
                     
                 </div>
-                <button>continue</button>
-                
+                <button id="confirm-button" onclick="verificar()">confirm</button>
+                <button id="remake" disabled style="display: none;" onclick="refreshPage()">remake</button>
             </div>
         </section>
     </main>
     
+    <script src="script.js"></script>
 </body>
 </html>
