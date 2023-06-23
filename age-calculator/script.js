@@ -26,6 +26,45 @@ function calcularIdade(dataNascimento) {
   return { anos: anos, meses: meses, dias: dias };
 }
 
+function limitarCaracteres() {
+  // Limitando caracteres (DD/MM/YYYY)
+  const input1 = document.getElementById("day");
+  const input2 = document.getElementById("month");
+  const input3 = document.getElementById("year");
+
+  const maxLengthInput1 = 2;
+  const maxLengthInput2 = 2;
+  const maxLengthInput3 = 4;
+
+  input1.addEventListener("input", function () {
+    if (input1.value.length > maxLengthInput1) {
+      input1.value = input1.value.slice(0, maxLengthInput1);
+    }
+  });
+
+  input2.addEventListener("input", function () {
+    if (input2.value.length > maxLengthInput2) {
+      input2.value = input2.value.slice(0, maxLengthInput2);
+    }
+  });
+
+  input3.addEventListener("input", function () {
+    if (input3.value.length > maxLengthInput3) {
+      input3.value = input3.value.slice(0, maxLengthInput3);
+    }
+  });
+}
+
+function validarNumeros(input) {
+  const valor = input.value.replace(/[^\d]/g, ""); // Remove todos os caracteres não numéricos
+
+  if (valor !== "" && !/^\d+$/.test(valor)) {
+    input.value = input.value.slice(0, -1); // Remove o último caractere digitado se não for um número válido
+  } else {
+    input.value = valor; // Atualiza o valor do input com os caracteres numéricos
+  }
+}
+
 function verificar() {
   var nascimento = {
     // Pega os valores dos inputs e converte-os em número.
@@ -34,24 +73,35 @@ function verificar() {
     dia: Number(document.getElementById("day").value),
   };
   // Pega os elementos onde vai a resposta para o usuário.
-  let day = document.getElementById("result-day");
-  let month = document.getElementById("result-month");
-  let year = document.getElementById("result-year");
+  const day = document.getElementById("result-day");
+  const month = document.getElementById("result-month");
+  const year = document.getElementById("result-year");
 
   // Elementos de erro
-  let errorDay = document.getElementById("error-day");
-  let errorMonth = document.getElementById("error-month");
-  let errorYear = document.getElementById("error-year");
-  let errorDia = document.getElementById("day");
-  let errorMes = document.getElementById("month");
-  let errorAno = document.getElementById("year");
-  erroTitleDay = document.getElementById("title-day");
-  erroTitleMonth = document.getElementById("title-month");
-  erroTitleYear = document.getElementById("title-year");
+  const errorDay = document.getElementById("error-day");
+  const errorMonth = document.getElementById("error-month");
+  const errorYear = document.getElementById("error-year");
+  const errorDia = document.getElementById("day");
+  const errorMes = document.getElementById("month");
+  const errorAno = document.getElementById("year");
+  const erroTitleDay = document.getElementById("title-day");
+  const erroTitleMonth = document.getElementById("title-month");
+  const erroTitleYear = document.getElementById("title-year");
 
   // Pega o ano Atual para efetuar as verificações, através do objeto date.
-  let data = new Date();
-  let anoAtual = data.getFullYear();
+  const data = new Date();
+  const anoAtual = data.getFullYear();
+
+  // Limpando mensagens de erro.
+  errorDay.innerHTML = "";
+  errorMonth.innerHTML = "";
+  errorYear.innerHTML = "";
+  errorDia.style.border = "1.5px solid rgb(226, 226, 226);";
+  errorMes.style.border = "1.5px solid rgb(226, 226, 226);";
+  errorAno.style.border = "1.5px solid rgb(226, 226, 226);";
+  erroTitleDay.style.color = "grey;";
+  erroTitleMonth.style.color = "grey;";
+  erroTitleYear.style.color = "grey;";
 
   //Verificação se tudo está correto para prosseguimento.
   if (
@@ -70,53 +120,31 @@ function verificar() {
     month.innerHTML = `${idade.meses}`;
     day.innerHTML = `${idade.dias}`;
 
-    // Limpar mensagens de erro e classes de estilo inválido.
-    errorDay.textContent = "";
-    errorMonth.textContent = "";
-    errorYear.textContent = "";
-    errorDia.style = "border: 1.5px solid rgb(226, 226, 226);";
-    errorMes.style = "border: 1.5px solid rgb(226, 226, 226);";
-    errorAno.style = "border: 1.5px solid rgb(226, 226, 226);";
-    erroTitleDay.style = "color: grey;";
-    erroTitleMonth.style = "color: grey;";
-    erroTitleYear.style = "color: grey;";
-
     //Informa que há um valor inválido.
   } else {
-    if (nascimento.dia < 1 || nascimento.dia > 31) {
-      errorDay.textContent = "Must be a valid day";
-      document.getElementById("title-day").classList.add("invalid");
-      document.getElementById("day").classList.add("error");
-      var borderDay = document.createElement("borderday");
-      borderDay.innerHTML = "border: 0.5px solid red;";
-      document.head.appendChild(borderDay);
-      document.getElementById("day").classList.add("style");
-    } else {
-      return;
+    // Limpando valores
+    year.innerHTML = "--";
+    month.innerHTML = "--";
+    day.innerHTML = "--";
+
+    // Fazendo as verificações do erro
+    if (nascimento.dia < 1 || nascimento.dia > 31 || nascimento.dia == "") {
+      errorDay.innerHTML = "Must be a valid day";
+      errorDia.style.border = "0.5px solid red;";
     }
 
-    if (nascimento.mes < 1 || nascimento.mes > 12) {
-      errorMonth.textContent = "Must be a valid month";
-      document.getElementById("title-month").classList.add("invalid");
-      document.getElementById("month").classList.add("error");
-      var borderMonth = document.createElement("bordermonth");
-      borderMonth.innerHTML = "border: 0.5px solid red;";
-      document.head.appendChild(borderMonth);
-      document.getElementById("month").classList.add("style");
-    } else {
-      return;
+    if (nascimento.mes < 1 || nascimento.mes > 12 || nascimento.dia == "") {
+      errorMonth.innerHTML = "Must be a valid month";
+      errorMes.style.border = "0.5px solid red;";
     }
 
-    if (nascimento.ano > anoAtual) {
-      errorYear.textContent = "Must be in the past";
-      document.getElementById("title-year").classList.add("invalid");
-      document.getElementById("year").classList.add("error");
-      var borderYear = document.createElement("borderyear");
-      borderYear.innerHTML = "border: 0.5px solid red;";
-      document.head.appendChild(borderYear);
-      document.getElementById("month").classList.add("style");
-    } else {
-      return;
+    if (
+      nascimento.ano > anoAtual ||
+      nascimento.ano == "" ||
+      nascimento.ano <= 0
+    ) {
+      errorYear.innerHTML = "Must be in the past";
+      errorAno.style.border = "0.5px solid red;";
     }
   }
 }
