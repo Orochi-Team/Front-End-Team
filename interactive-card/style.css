@@ -294,7 +294,7 @@ label{
   @media only screen and (max-width:600px){
     .bg-front{
       position: absolute;
-      top: 30vw;
+      top: 35vw;
     }
 
     main{
