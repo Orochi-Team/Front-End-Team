@@ -292,12 +292,17 @@ label{
   }
 
   @media only screen and (max-width:600px){
+    main{
+      gap: 33vw;
+    }
+
     .bg-front{
       position: absolute;
       top: 35vw;
     }
 
-    main{
-      gap: 33vw;
+    .card-logo{
+      margin-bottom: 10%;
     }
+
   }
