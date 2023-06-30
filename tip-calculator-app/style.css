@@ -41,6 +41,7 @@ section{
     width: 80%;
     padding: 0px 20px 20px 20px;
     display: flex;
+    border-radius: 15px;
 }
 
 .left{
@@ -105,11 +106,22 @@ button:hover{
     background-color: var(--cor03);
     color: var(--cor01);
     font-weight: 700;
+    width: 22%;
+    height: 17%;
+    transition-duration: 0.7s;
+}
+
+.cus-but::placeholder{
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
 }
 
 .cus-but:hover{
     background-color: var(--cor0);
-    color: var(--cor04);
+    color: var(--cor01);
+    transition-duration: 1s;
+    transform: scale(1.1);
 }
 
 .num-people{
@@ -201,7 +213,7 @@ span{
     section{
         flex-direction: column;
         height: 100%;
-        width: 60%;
+        width: 80%;
         padding-left: 60px;
     }
 
@@ -218,14 +230,18 @@ span{
     }
 
     input{
-        width: 50vw;
+        width: 66vw;
     }
 
     .porc-values{
-        width: 56vw;
+        width: 73vw;
     }
     .porc-values > button{
         width: 30%;
+    }
+
+    .cus-but{
+        width: 24.6%;
     }
 
     .right{
