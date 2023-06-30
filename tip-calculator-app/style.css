@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+:root {
+    --cor0:hsl(183, 100%, 15%);
+    --cor01:hsl(186, 14%, 43%);
+    --cor02:hsl(184, 14%, 56%);
+    --cor03:hsl(185, 41%, 84%);
+    --cor04:hsl(189, 41%, 97%);
+    --cor05:hsl(0, 0%, 100%);
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor03);
+}
+
+h1{
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: var(--cor01);
+    margin-bottom: 40px;
+}
+
+section{
+    background-color: var(--cor05);
+    height: 50%;
+    width: 80%;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+::placeholder{
+    text-align: end;
+    font-size: 20px;
+}
+
+label{
+    margin-top: 30px;
+    font-weight: 600;
+    color: var(--cor01);
+}
+
+.inp-num{
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 12px;
+}
+
+input{
+    border-radius: 4px;
+    border: none;
+    background-color: var(--cor03);
+    text-align: end;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--cor0);
+    font-weight: 700;
+    width: 88%;
+}
+
+button{
+    height: 35px;
+    width: 80px;
+    background-color: var(--cor0);
+    border: none;
+    margin-top: 10px;
+    color: var(--cor05);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition-duration: 0.9s;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.7s;
+    color: var(--cor0);
+    background-color: var(--cor03);
+}
+
+.cus-but{
+    background-color: var(--cor03);
+    color: var(--cor01);
+    font-weight: 700;
+}
+
+.cus-but:hover{
+    background-color: var(--cor0);
+    color: var(--cor04);
+}
+
+.num-people{
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 12px;
+}
+
+.right{
+    background-color: var(--cor0);
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tip-amount{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.generico > label{
+    color: var(--cor04);
+}
+
+.generico > p{
+    color: var(--cor02);
+    font-weight: bold;
+}
+
+.total-card{
+    display: flex;
+    justify-content: space-between;  
+    align-items: center; 
+    margin-bottom: 130px;
+}
+
+span{
+    font-size: 30px;
+    color: hsl(165, 64%, 58%);
+    font-weight: 700;
+}
+
+.reset-button{
+    background-color: hsl(165, 50%, 52%);
+    width: 100%;
+    height: 40px;
+    color: var(--cor0);
+    transition-duration: 1s;
+}
+
+@media only screen and (min-width:900px){
+    section{
+        width: 70%;
+        height: 60%;
+        padding: 30px;
+        justify-content: center;
+    }
+
+    input{
+        margin-bottom: 19px;
+    }
+       
+    .total-card{
+        margin-bottom: 100px;
+    }
+
+    .left{
+        height: 65%;
+        width: 45%;
+    }
+
+    .right{
+        height: 68%;
+        width: 45%;
+    }
+
+    .reset-button{
+        width: 80%;
+        margin-left: 34px;
+    }
+
+}
+
+@media only screen and (max-width:650px){
+    section{
+        flex-direction: column;
+        height: 100%;
+        width: 60%;
+        padding-left: 60px;
+    }
+
+    main{
+        height: 100vh;
+    }
+
+    h1{
+        margin-bottom: 10px;
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    input{
+        width: 50vw;
+    }
+
+    .porc-values{
+        width: 56vw;
+    }
+    .porc-values > button{
+        width: 30%;
+    }
+
+    .right{
+        width: 78%;
+        height: 30%;
+    }
+
+    .total-card{
+      margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator App</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Spli <br> tter</h1>
+        <section>
+            <div class="left">
+                <label for="">Bill</label>
+                <input type="number" placeholder="0" class="inp-num" id="">
+                <label for="porc-values">Select Tip %</label>
+                <div class="porc-values">
+                    <button>5%</button>
+                    <button>10%</button>
+                    <button>15%</button>
+                    <button>25%</button>
+                    <button>50%</button>
+                    <button class="cus-but"><p>Custom</p></button>
+                </div>
+                <label for="num-people">Number of People</label>
+                <input type="number" class="num-people" id="">
+            </div>
+
+            <div class="right">
+                <div class="tip-amount">
+                    <div class="generico">
+                        <label for="per">Tip Amount</label>
+                        <p class="per">/ person</p>
+                    </div>
+                    
+                    <span class="amount-value"><img src="images/icon-dollar.svg" alt=""> 0.00</span>
+                </div>
+
+                <div class="total-card">
+                    <div class="generico">
+                        <label for="total">Total</label>
+                        <p class="total">/ person</p>
+                    </div>
+
+                    <span class="total-person"><img src="images/icon-person.svg" alt=""> 0.00</span>
+                </div>
+                <button class="reset-button">Reset</button>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
