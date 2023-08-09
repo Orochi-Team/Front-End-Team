@@ -12,9 +12,15 @@
         <h1>Spli <br> tter</h1>
         <section>
             <div class="left">
-                <label for="">Bill</label>
+                <div class="sla">
+                    <p class="label">Bill</p>
+                    <p class="error-bill">Error Bill</p>
+                </div>
                 <input type="number" placeholder="0" class="inp-num" id="inputNum">
-                <label for="porc-values">Select Tip %</label>
+                <div class="sla">
+                    <p class="label">Select Tip%</p>
+                    <p class="error-tip">Invalid %</p>
+                </div>
                 <div class="porc-values">
                     <button class="btn-percent" id="cinco" onclick="percent(5)">5%</button>
                     <button class="btn-percent" id="dez" onclick="percent(10)">10%</button>
@@ -23,8 +29,11 @@
                     <button class="btn-percent" id="cinquenta" onclick="percent(50)">50%</button>
                    <input type="number" class="cus-but" id="custom" placeholder="Custom" oninput="percent(this.value)">
                 </div>
-                <label for="num-people">Number of People</label>
-                <input type="number" class="num-people" id="inputPeople" oninput="this.value = this.value.replace(/\D/g, '')">
+                <div class="sla">
+                    <p class="label">Number Of People</p>
+                    <p class="error-people">Invalid Value</p>
+                </div>
+                <input type="number" placeholder="0" class="num-people" id="inputPeople" oninput="this.value = this.value.replace(/\D/g, '')">
             </div>
 
             <div class="right">
