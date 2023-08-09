@@ -15,6 +15,11 @@ function calculate() {
   const Bill = parseFloat(document.getElementById("inputNum").value);
   const tot_people = parseInt(document.getElementById("inputPeople").value);
 
+  // Elementos de erro HTML
+  const bill_error = document.getElementById("bill-error");
+  const tip_error = document.getElementById("tip-error");
+  const people_error = document.getElementById("people-error");
+
   // Puxando elementos necessários CSS
   const style_people = document.getElementById("inputPeople");
   const style_bill = document.getElementById("inputNum");
@@ -22,6 +27,9 @@ function calculate() {
   // Limpando elementos de erro
   style_bill.style.border = "none";
   style_people.style.border = "none";
+  bill_error.innerHTML = "";
+  tip_error.innerHTML = "";
+  people_error.innerHTML = "";
 
   if (Bill > 0 && tot_people > 0 && percentage > 0) {
     // Fazendo o cálculo
@@ -39,13 +47,16 @@ function calculate() {
     ResTotal.innerHTML = "0.00";
 
     if (Bill <= 0 || isNaN(Bill)) {
-      style_bill.style.border = "2px solid red";
+      bill_error.innerHTML = "Invalid Bill";
+      style_bill.style.border = "1.5px solid red";
     }
     if (tot_people <= 0 || isNaN(tot_people)) {
-      style_people.style.border = "2px solid red";
+      people_error.innerHTML = "Invalid Value";
+      style_people.style.border = "1.5px solid red";
     }
 
     if (percentage <= 0 || isNaN(percentage)) {
+      tip_error.innerHTML = "Invalid %";
     }
   }
 }
