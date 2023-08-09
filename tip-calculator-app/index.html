@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator App</title>
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main>
@@ -13,18 +13,18 @@
         <section>
             <div class="left">
                 <label for="">Bill</label>
-                <input type="number" placeholder="0" class="inp-num" id="">
+                <input type="number" placeholder="0" class="inp-num" id="inputNum">
                 <label for="porc-values">Select Tip %</label>
                 <div class="porc-values">
-                    <button>5%</button>
-                    <button>10%</button>
-                    <button>15%</button>
-                    <button>25%</button>
-                    <button>50%</button>
-                   <input type="number" class="cus-but" id="" placeholder="Custom">
+                    <button class="btn-percent" id="cinco" onclick="percent(5)">5%</button>
+                    <button class="btn-percent" id="dez" onclick="percent(10)">10%</button>
+                    <button class="btn-percent" id="quinze" onclick="percent(15)">15%</button>
+                    <button class="btn-percent" id="vintecinco" onclick="percent(25)">25%</button>
+                    <button class="btn-percent" id="cinquenta" onclick="percent(50)">50%</button>
+                   <input type="number" class="cus-but" id="custom" placeholder="Custom" oninput="percent(this.value)">
                 </div>
                 <label for="num-people">Number of People</label>
-                <input type="number" class="num-people" id="">
+                <input type="number" class="num-people" id="inputPeople" oninput="this.value = this.value.replace(/\D/g, '')">
             </div>
 
             <div class="right">
@@ -34,7 +34,7 @@
                         <p class="per">/ person</p>
                     </div>
                     
-                    <span class="amount-value"><img src="images/icon-dollar.svg" alt=""> 0.00</span>
+                    <span class="amount-value" id="TipAmount"><img src="images/icon-dollar.svg" alt=""> 0.00</span>
                 </div>
 
                 <div class="total-card">
@@ -43,12 +43,14 @@
                         <p class="total">/ person</p>
                     </div>
 
-                    <span class="total-person"><img src="images/icon-person.svg" alt=""> 0.00</span>
+                    <span class="total-person" id="TotalPerson"><img src="images/icon-person.svg" alt=""> 0.00</span>
                 </div>
-                <button class="reset-button">Reset</button>
+                <button class="reset-button" id="reset" onclick="calculate()">Reset</button>
             </div>
         </section>
     </main>
     
+    <script src="js/script.js"></script>
+
 </body>
 </html>
