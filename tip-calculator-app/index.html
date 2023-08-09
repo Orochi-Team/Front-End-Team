@@ -12,19 +12,28 @@
         <h1>Spli <br> tter</h1>
         <section>
             <div class="left">
-                <label for="">Bill</label>
-                <input type="number" placeholder="0" class="inp-num" id="inputNum">
-                <label for="porc-values">Select Tip %</label>
-                <div class="porc-values">
-                    <button class="btn-percent" id="cinco" onclick="percent(5), calculate()">5%</button>
-                    <button class="btn-percent" id="dez" onclick="percent(10), calculate()">10%</button>
-                    <button class="btn-percent" id="quinze" onclick="percent(15), calculate()">15%</button>
-                    <button class="btn-percent" id="vintecinco" onclick="percent(25), calculate()">25%</button>
-                    <button class="btn-percent" id="cinquenta" onclick="percent(50).calculate()">50%</button>
-                   <input type="number" class="cus-but" id="custom" placeholder="Custom" oninput="percent(this.value), calculate()">
+                <div class="sla">
+                    <p class="label">Bill</p>
+                    <p class="error-bill">Error Bill</p>
                 </div>
-                <label for="num-people">Number of People</label>
-                <input type="number" class="num-people" id="inputPeople" oninput="this.value = this.value.replace(/\D/g, '')">
+                <input type="number" placeholder="0" class="inp-num" id="inputNum">
+                <div class="sla">
+                    <p class="label">Select Tip%</p>
+                    <p class="error-tip">Invalid %</p>
+                </div>
+                <div class="porc-values">
+                    <button class="btn-percent" id="cinco" onclick="percent(5)">5%</button>
+                    <button class="btn-percent" id="dez" onclick="percent(10)">10%</button>
+                    <button class="btn-percent" id="quinze" onclick="percent(15)">15%</button>
+                    <button class="btn-percent" id="vintecinco" onclick="percent(25)">25%</button>
+                    <button class="btn-percent" id="cinquenta" onclick="percent(50)">50%</button>
+                   <input type="number" class="cus-but" id="custom" placeholder="Custom" oninput="percent(this.value)">
+                </div>
+                <div class="sla">
+                    <p class="label">Number Of People</p>
+                    <p class="error-people">Invalid Value</p>
+                </div>
+                <input type="number" placeholder="0" class="num-people" id="inputPeople" oninput="this.value = this.value.replace(/\D/g, '')">
             </div>
 
             <div class="right">
@@ -45,7 +54,7 @@
 
                     <span class="total-person" id="TotalPerson"><img src="images/icon-person.svg" alt=""> 0.00</span>
                 </div>
-                <button class="reset-button" id="reset" onclick="reset()">Reset</button>
+                <button class="reset-button" id="reset" onclick="calculate()">Reset</button>
             </div>
         </section>
     </main>
