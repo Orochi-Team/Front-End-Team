@@ -38,14 +38,18 @@ function calculate() {
     ResTip.innerHTML = "0.00";
     ResTotal.innerHTML = "0.00";
 
-    if (Bill <= 0 || Bill == "") {
+    if (Bill <= 0 || isNaN(Bill)) {
       style_bill.style.border = "2px solid red";
     }
-    if (tot_people <= 0 || tot_people == "") {
+    if (tot_people <= 0 || isNaN(tot_people)) {
       style_people.style.border = "2px solid red";
     }
 
-    if (percentage <= 0 || percentage == "") {
+    if (percentage <= 0 || isNaN(percentage)) {
     }
   }
+}
+function reset() {
+  // Reset na página
+  location.reload();
 }
